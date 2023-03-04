@@ -1,0 +1,13 @@
+logging:
+  file: ${catalina.base}/logs/${service.name}.log
+
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    #    url: jdbc:sqlserver://localhost\\SQLEXPRESS;databaseName=kg;integratedSecurity=true;Trusted_Connection=True;
+    url: jdbc:sqlserver://localhost\\MSSQLSERVER:1433;databaseName=kg;encrypt=true;trustServerCertificate=true;
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: 1234
