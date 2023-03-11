@@ -20,9 +20,12 @@ public class HelloController {
   private HelloService helloService;
 
   @GetMapping("/")
-  public ResponseEntity hello() {
+  public ResponseEntity<HelloResponse<String>> hello() {
     LOGGER.info("hello method called!");
-    return ResponseEntity.status(HttpStatus.OK).body("Hii");
+    HelloResponse<String> response = new HelloResponse<>();
+    response.setData("Hiii");
+    response.setTotal(11);
+    return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
   @GetMapping("/yourtable")
